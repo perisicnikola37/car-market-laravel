@@ -1,0 +1,426 @@
+// Importing "_variables.scss" file
+@import "./variables";
+
+// Google Font - Open Sans | 400, 600, 800
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+// font-family: 'Open Sans', sans-serif;
+
+
+// Scroll Track
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px !important;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $black; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $blue-light; 
+  }
+  
+
+// Reset to default values
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+    font-size: 0.8rem;
+    font-family: $font-primary;
+}
+
+h1 {
+    font-family: $font-primary;
+}
+
+img {
+    overflow: hidden;
+    width: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons a {
+    padding: 6px;
+    margin-top: 5px;
+}
+
+.button1 {
+    background: $blue-light;
+    display:inline-block;
+    color: $white !important;
+    font-size: 15px;
+}
+
+.button2 {
+    background: $blue-light;
+    display:inline-block;
+    margin-left: 20px;
+    color: $white !important;
+    font-size: 15px;
+  }
+
+.button-hover:hover {
+    background-color: $black;
+    transition: 0.25s ease-out;
+}
+
+.parallelogram{
+    transform: skew(-20deg);
+}
+
+.skew-fix{
+    display:inline-block;
+    transform: skew(20deg);
+}
+
+.bg-dark-custom {
+    background-color: $black;
+    color: $white;
+}
+
+.overflow {
+    overflow: hidden !important;
+}
+
+.wrapper {
+    background-color: black;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    transform: skew(-20deg);
+}
+
+.wrapper ul {
+    margin-left: 8rem !important;
+    margin: auto;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.wrapper ul li a {
+    padding: 9px;
+    background-color: $black;
+    color: $white;
+}
+
+.wrapper ul li a:hover {
+    background-color: $blue-light;
+    transition: 0.2s;
+}
+
+.wrapper {
+
+    .home-icon {
+        margin-left: 10px;
+        padding: 4px;
+        overflow: hidden !important;
+        background-color: $blue-light;
+        color: $white;
+    }
+
+    .home-icon:hover {
+        background-color: hsl(206, 100%, 40%);
+        transition: 0.1s ease-in;
+    }
+
+}
+
+.wrapper .bg-success-custom a {
+    background-color: $green !important;
+    margin-right: 5px;
+}
+
+.wrapper .bg-success-custom a:hover {
+    background-color: $blue-light !important;
+    transition: none;
+}
+
+.wrapper .bg-danger-custom a {
+    background-color: $red !important;
+}
+
+.wrapper .bg-danger-custom a:hover {
+    background-color: $blue-light !important;
+    transition: none;
+}
+
+.post-info p {
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: $font-primary;
+
+    span {
+        font-weight: normal;
+    }
+
+    a {
+        color: $black;
+    }
+    
+    a:hover {
+        transition: 0.1s;
+        color: #0073ff;
+    }
+
+}
+
+#post-box {
+    padding: 22px 22px 0px 22px;
+    border: 1px solid $gray;
+    margin-bottom: 20px;
+}
+
+.post-info p:first-child {
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+.post-info {
+    line-height: 0.2;
+}
+
+.button-post-info {
+    // letter-spacing: 0.4px;
+    font-weight: bold;
+    background: $black;
+    display:inline-block;
+    color: $white !important;
+    padding: 5px;
+    font-size: 0.7rem;
+    border-left: solid 3.5px $blue;
+    cursor: default;
+}
+
+.footer {
+    display: flex;
+    font-family: $font-primary;
+
+    p {
+        font-weight: bold;
+    }
+    
+}
+
+.footer-flex-end {
+    margin-left: 140px !important;
+}
+
+footer {
+    font-weight: bold;
+    font-family: $font-primary;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+
+
+    span a {
+        color: $red;
+    }
+
+    span a:hover {
+        color: #0073ff;
+        transition: 0.25s;
+    }
+
+    
+
+}
+
+
+// Scroll Indicator
+
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: $white;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 4px;
+    background: $black;
+  }
+  
+  .progress-bar {
+    height: 4px;
+    background: blue;
+    width: 0%;
+  }
+
+// Scroll to Top button
+
+  #myBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 10px;
+    border: none;
+    height: 50px;
+    width: 50px;
+    outline: none;
+    background-color: $black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+  }
+  
+  #myBtn:hover {
+    background-color: $blue-light;
+    transition: 0.25s ease-out;
+  }
+
+
+.form {
+    font-family: $font-primary;
+}
+
+.form .form-group {
+    margin-bottom: 5px;
+}
+
+.form .form-group label{
+    margin-bottom: 5px;
+}
+
+// Moj custom kod
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-40 {
+    padding: 40px;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+// Session
+
+.session {
+    margin-top: 20px;
+    background-color: $green;
+}
+
+// pogledaj_oglas.blade.php
+
+.view-oglas-box {
+    text-align: center;
+    border: 1px solid $gray;
+    padding: 20px;
+
+    #span1 {
+        font-weight: bold;
+    }
+
+}
+
+#lokacija-box {
+    background-color: $gray;
+    padding: 10px;
+}
+
+#nema-oglasa {
+    font-family: $font-primary;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+// Holder za lokaciju i opis / pogledaj_oglas.blade.php
+#holder {
+    padding: 5px;
+    background-color: $gray;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-left: 2px solid $black;
+    letter-spacing: 2px;
+
+}
+
+.lokacija-div {
+
+    span {
+        letter-spacing: 0.8px;
+    }
+
+}
+
+.lokacija-div-mini {
+    margin-top: 15px;
+    font-family: $font-primary;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
