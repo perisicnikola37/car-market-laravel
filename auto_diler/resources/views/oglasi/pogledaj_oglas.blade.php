@@ -50,7 +50,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="#">
+            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -108,23 +108,20 @@
 
     <section class="align-left" style="display: flex;height: 27px">
 
-    <p class="text-bold">{{$car->proizvodjac}} - {{$car->model}}</p>
-
-    <a class="button-post-info parallelogram" href="#" style="margin-left: 12px">
-
-        <span class="skew-fix">
-            {{$car->cijena}} &euro;&nbsp;
-        </span>
-
-    </a>
+     <p class="text-bold">{{$car->proizvodjac}} - {{$car->model}}</p>
+ 
+     <a class="button-post-info parallelogram" href="#" style="margin-left: 12px">
+ 
+         <span class="skew-fix">
+             {{$car->cijena}} &euro;&nbsp;
+         </span>
+ 
+     </a>
 
     </section>
    
 
-
-
-
-<div class="row mt-5">
+<div class="row mt-4">
 
 <div class="col-sm-3 view-oglas-box">
     <i class="fas fa-tachometer-alt fa-2x"></i>
@@ -193,8 +190,9 @@
     <img 
     style="margin-left: 12px;margin-top: 5px;"
     class="w-50"
-    src="{{$car->photo->file}}" 
-    alt="">
+    src="{{$car->photo ? $car->photo->file : "Missing"}}" 
+    alt="Missing picture"
+    title="Slika automobila">
         
     </div>
 

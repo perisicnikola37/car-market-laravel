@@ -50,7 +50,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="#">
+            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -121,9 +121,9 @@
             <a href="{{route('car.show', $car->id)}}">
             <img
             class="img-fluid"
-            src="{{$car->photo->file ? $car->photo->file : "Missing"}}" 
-            alt="Slika automobila"
-            title="Slika automob">
+            src="{{$car->photo ? $car->photo->file : "Missing"}}" 
+            alt="Missing picture"
+            title="Slika automobila">
             </a>
             <div class="post-info">
             <p><a href="{{route('car.show', $car->id)}}">{{$car->proizvodjac}} - {{$car->model}}</a></p> 
@@ -144,17 +144,20 @@
             </a>
 
             <div class="footer">
-                <div>
-                    <p style="font-size: 12px;margin-top: 10px;">
-                        <i class="fas fa-map-marker-alt"></i> 
-                        {{$car->lokacija}}
-                    </p>
-                </div>
-
+     
+                    <div class="col-sm-6">
+                        <p style="font-size: 12px;margin-top: 10px;">
+                            <i class="fas fa-map-marker-alt"></i> 
+                            {{$car->lokacija}}
+                        </p>
+                    </div>
          
-                    <span style="font-size: 10px;margin-top: 10px;margin-left: 63px">
-                       {{$car->created_at->diffForHumans()}}
-                    </span>
+                    <div class="col-sm-6 align-right">
+                        <p class="no-bold-p" style="font-size: 12px;margin-top: 10px;">
+                            {{$car->created_at->diffForHumans()}}
+                        </p>
+                    </div>
+     
 
             </div>
             

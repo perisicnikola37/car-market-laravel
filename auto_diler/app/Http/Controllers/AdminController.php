@@ -82,14 +82,13 @@ class AdminController extends Controller
         }
 
         if(isset($user)) {
-            $user->cars()->create($input);
+        $user->cars()->create($input);
+        session()->flash('objavljen-oglas', 'Vaš oglas će uskoro biti objavljen!');
         } else {
-            return redirect('/error404');
+        session()->flash('nije-objavljen-oglas', 'Morate biti prijavljeni kako biste izbacili oglas!');
         }
 
-        
-
-        session()->flash('objavljen-oglas', 'Vaš oglas će uskoro biti objavljen!');
+     
 
         return back();
         

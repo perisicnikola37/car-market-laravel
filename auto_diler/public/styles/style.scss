@@ -221,6 +221,11 @@ img {
     p {
         font-weight: bold;
     }
+
+    .no-bold-p {
+        font-weight: normal;
+    }
+    
     
 }
 
@@ -347,9 +352,14 @@ footer {
 
 // Session
 
-.session {
+.sessionsuccess {
     margin-top: 20px;
     background-color: $green;
+}
+
+.sessiondanger {
+    margin-top: 20px;
+    background-color: $red;
 }
 
 // pogledaj_oglas.blade.php

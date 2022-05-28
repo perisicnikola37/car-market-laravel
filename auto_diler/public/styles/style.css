@@ -233,6 +233,10 @@ img {
   font-weight: bold;
 }
 
+.footer .no-bold-p {
+  font-weight: normal;
+}
+
 .footer-flex-end {
   margin-left: 140px !important;
 }
@@ -350,9 +354,14 @@ footer span a:hover {
   text-transform: uppercase;
 }
 
-.session {
+.sessionsuccess {
   margin-top: 20px;
   background-color: #11A73F;
+}
+
+.sessiondanger {
+  margin-top: 20px;
+  background-color: #E30707;
 }
 
 .view-oglas-box {

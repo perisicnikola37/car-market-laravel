@@ -50,7 +50,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="#">
+            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -97,18 +97,34 @@
 
     {{-- Session message za objavljivanje oglasa --}}
 
-    <div class="container session">
+    <div class="container sessionsuccess">
 
-    @if (Session::has('objavljen-oglas'))
-
-    <div
-    class="alert">
-        {{session('objavljen-oglas')}}    
-    </div> 
-
-    @endif
-
+     @if (Session::has('objavljen-oglas'))
+ 
+     <div
+     class="alert">
+         {{session('objavljen-oglas')}}    
+     </div> 
+ 
+     @endif
+    
     </div>
+
+    <div class="container sessiondanger">
+
+        @if (Session::has('nije-objavljen-oglas'))
+    
+        <div
+        class="alert">
+            {{session('nije-objavljen-oglas')}}    
+        </div> 
+    
+        @endif
+       
+       </div>
+
+
+    
 
     {{-- Form --}}
 
