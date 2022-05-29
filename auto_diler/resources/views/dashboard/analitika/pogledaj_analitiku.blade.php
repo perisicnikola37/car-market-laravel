@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+
+@section('title')
+
+<title>AutoDiler | Analitika</title><title>AutoDiler | Statistika</title>
+	
+@endsection
+
+
 @section('scripts')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -8,7 +16,6 @@
 	<canvas id="myChart"></canvas>
 </div>
 
-<hr>
 
 <script>
 	const ctx = document.getElementById('myChart').getContext('2d');
@@ -48,6 +55,10 @@
 	});
 </script>
 
+@section('analitika-tekst')
 
+<h4 class="page-header">Statistika - AutoDiler &reg;</h4>
+	
+@endsection
 
 @endsection

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\User;
 
+//! Ovo je vazno za Laravel Helpers
+use Illuminate\Support\Str;
+//!
+
 class AnalitikaController extends Controller
 {
     /**

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+
 /* width */
 ::-webkit-scrollbar {
   width: 7px !important;
@@ -21,9 +22,6 @@ body, html {
 a {
   text-decoration: none !important;
 }
-
-
-
 
 img {
   overflow: hidden;
@@ -263,6 +261,7 @@ footer span a:hover {
 }
 
 .progress-bar {
+  z-index: 222 !important;
   height: 4px;
   background: blue;
   width: 0%;

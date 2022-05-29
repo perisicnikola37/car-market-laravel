@@ -1,5 +1,6 @@
 @extends('layouts.naslovna')
 
+
 @section('content')
 
 <!-- Header -->
@@ -50,7 +51,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
+            <a class="button2 button-hover parallelogram" href="{{route('profil.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -89,7 +90,7 @@
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Servisi i usluge</span></a></li>
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Registracija vozila</span></a></li>
             <li onclick="clickMe()" class="parallelogram bg-success-custom"><a href="#"><span class="skew-fix">Popust Kartica</span></a></li>
-            <li class="parallelogram bg-danger-custom"><a href="{{route('admin.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
+            <li class="parallelogram bg-danger-custom"><a href="{{route('dodaj-oglas.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
         </ul>
     </div>
     
@@ -200,25 +201,6 @@
 
 </div>
 
-
-{{-- <div class="container mt-5">
-    <div class="row">
-
-
-        <div class="col-sm-6">
-
-        {!! Form::open(['method' => 'DELETE', 'action' => ['App\Http\Controllers\AdminController@destroy', $car->id]]) !!}
-        <div class="form-group">
-            {!! Form::submit('Izbriši oglas', ['class' => 'btn btn-danger col-sm-6']) !!}
-        </div>
-        {!! Form::close() !!}
-
-        </div>
-
-
-
-    </div>
-</div> --}}
 
 
     </div>

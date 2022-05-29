@@ -1,14 +1,17 @@
 @extends('layouts.admin')
 
+
+@section('title')
+
+<title>AutoDiler | Dashboard - izmijeni oglas</title>
+    
+@endsection
+
 @section('content')
 
 
-
-
-
-
     {{-- Session message za objavljivanje oglasa --}}
-{{-- 
+
     <div class="container sessionsuccess">
 
      @if (Session::has('objavljen-oglas'))
@@ -33,7 +36,7 @@
     
         @endif
        
-       </div> --}}
+    </div> 
 
 
     
@@ -41,7 +44,7 @@
 
         <h3>Izmijeni oglas: {{$car->proizvodjac}} - {{$car->model}}</h3>
         <img 
-        height="240"
+        height="200"
         style="border-radius: 20px"
         src="{{$car->photo->file}}" 
         alt="">
@@ -218,18 +221,10 @@
 
     </div>
     
-    <!-- Scroll Indicator -->
-    
-    <div class="header">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>  
-    </div>
-    
-    <!-- To Top Button -->
-    
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
-      <i class="fas fa-angle-up fa-2x"></i>
-    </button>
+
+     
+      
+   
+
     
 @endsection

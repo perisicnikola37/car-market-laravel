@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('pogon_id')->index()->nullable();
             $table->string('stanje_id')->index()->nullable();
             $table->string('photo_id')->index()->nullable();
+            $table->string('slug')->index()->nullable();
             $table->string('proizvodjac')->nullable();
             $table->string('model')->nullable();
             $table->integer('kilometraza')->nullable();

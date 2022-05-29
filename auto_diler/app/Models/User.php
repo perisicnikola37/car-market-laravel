@@ -41,7 +41,7 @@ class User extends Authenticatable
 //     // Zašto baš '$this->role'
 //     // Jer imam role() relationship
 
-//     if ($this->user->name == "Administrator") {
+//     if ($this->roles->name == "Administrator") {
 //         return true;
 //     } else {
 //         return false;

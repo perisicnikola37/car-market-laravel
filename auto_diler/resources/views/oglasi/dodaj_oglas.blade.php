@@ -1,5 +1,11 @@
 @extends('layouts.naslovna')
 
+@section('title')
+
+<title>AutoDiler | Dodaj oglas</title>
+    
+@endsection
+
 @section('content')
 
 <!-- Header -->
@@ -50,7 +56,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
+            <a class="button2 button-hover parallelogram" href="{{route('profil.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -89,7 +95,7 @@
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Servisi i usluge</span></a></li>
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Registracija vozila</span></a></li>
             <li onclick="clickMe()" class="parallelogram bg-success-custom"><a href="#"><span class="skew-fix">Popust Kartica</span></a></li>
-            <li class="parallelogram bg-danger-custom"><a href="{{route('admin.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
+            <li class="parallelogram bg-danger-custom"><a href="{{route('dodaj-oglas.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
         </ul>
     </div>
     
@@ -138,7 +144,7 @@
                 <div class="form-group">
                     {!! Form::label('proizvodjac', 'Proizvođač:', ['class' => 'mb-2']) !!}
                     @error('proizvodjac')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('proizvodjac', null, ['placeholder' => 'Audi, BMW, Ford...', 'class' => 'form-control']) !!}
             </div>
@@ -150,7 +156,7 @@
                <div class="form-group">
                    {!! Form::label('model', 'Model:', ['class' => 'mb-2']) !!}
                    @error('model')
-                   <span style="color: red">*</span>
+                   <span style="color: red">*required</span>
                    @enderror
                    {!! Form::text('model', null, ['placeholder' => 'A3, A5, A6...', 'class' => 'form-control']) !!}
                </div>
@@ -162,7 +168,7 @@
                 <div class="form-group" style="border: 1px solid #cccccc;padding: 5px;">
                     {!! Form::label('photo_id', 'Fotografija:', ['class' => 'mb-1']) !!}
                     @error('photo_id')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::file('photo_id', null, ['form-control']) !!}
                 </div>
@@ -174,7 +180,7 @@
                 <div class="form-group">
                     {!! Form::label('oznaka', 'Oznaka:', ['class' => 'mb-2']) !!}
                     @error('oznaka')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('oznaka', null, ['placeholder' => '1.5 DCI, 2.0 TDI...', 'class' => 'form-control']) !!}
                 </div>
@@ -190,7 +196,7 @@
                 <div class="form-group">
                     {!! Form::label('stanje_id', 'Stanje:', ['class' => 'mb-2']) !!}
                     @error('stanje_id')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::select('stanje_id', ['' => 'Odaberi'] + $stanje ,null, ['class' => 'form-control']) !!}
                 </div>
@@ -201,7 +207,7 @@
                 <div class="form-group">
                     {!! Form::label('cijena', 'Cijena:', ['class' => 'mb-2']) !!}
                     @error('cijena')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('cijena', null, ['class' => 'form-control']) !!}
                 </div>
@@ -210,9 +216,9 @@
             <div class="col-sm-3">
 
                 <div class="form-group">
-                    {!! Form::label('kilometraza', 'Kilometraža:', ['class' => 'mb-2']) !!}
+                    {!! Form::label('kilometraza', 'Kilometraža(km):', ['class' => 'mb-2']) !!}
                     @error('kilometraza')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::number('kilometraza', null, ['placeholder' => '0' , 'class' => 'form-control']) !!}
                 </div>
@@ -224,7 +230,7 @@
                 <div class="form-group">
                     {!! Form::label('kubikaza', 'Kubikaža:', ['class' => 'mb-2']) !!}
                     @error('kubikaza')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::number('kubikaza', null, ['placeholder' => '0' , 'class' => 'form-control']) !!}
                 </div>
@@ -240,7 +246,7 @@
                 <div class="form-group">
                     {!! Form::label('godiste', 'Godište:', ['class' => 'mb-2']) !!}
                     @error('godiste')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::number('godiste', null, ['placeholder' => '0' , 'class' => 'form-control']) !!}
                 </div>
@@ -252,7 +258,7 @@
                 <div class="form-group">
                     {!! Form::label('lokacija', 'Lokacija:', ['class' => 'mb-2']) !!}
                     @error('lokacija')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('lokacija', null, ['class' => 'form-control']) !!}
                 </div>
@@ -264,7 +270,7 @@
                 <div class="form-group">
                     {!! Form::label('gorivo_id', 'Gorivo:', ['class' => 'mb-2']) !!}
                     @error('gorivo_id')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::select('gorivo_id', ['' => 'Odaberi'] + $gorivo ,null, ['class' => 'form-control']) !!}
                 </div>
@@ -274,9 +280,9 @@
             <div class="col-sm-3">
 
                 <div class="form-group">
-                    {!! Form::label('snaga', 'Snaga:', ['class' => 'mb-2']) !!}
+                    {!! Form::label('snaga', 'Snaga(ks):', ['class' => 'mb-2']) !!}
                     @error('snaga')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::number('snaga', null, ['placeholder' => '0' , 'class' => 'form-control']) !!}
                 </div>
@@ -292,7 +298,7 @@
                 <div class="form-group">
                     {!! Form::label('boja', 'Boja:', ['class' => 'mb-2']) !!}
                     @error('boja')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('boja', null, ['class' => 'form-control']) !!}
                 </div>
@@ -304,7 +310,7 @@
                 <div class="form-group">
                     {!! Form::label('pogon_id', 'Pogon:', ['class' => 'mb-2']) !!}
                     @error('pogon_id')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::select('pogon_id', ['' => 'Odaberi'] + $pogon ,null, ['class' => 'form-control']) !!}
                 </div>
@@ -316,7 +322,7 @@
                 <div class="form-group">
                     {!! Form::label('mijenjac', 'Mijenjač:', ['class' => 'mb-2']) !!}
                     @error('mijenjac')
-                    <span style="color: red">*</span>
+                    <span style="color: red">*required</span>
                     @enderror
                     {!! Form::text('mijenjac', null, ['class' => 'form-control']) !!}
                 </div>
@@ -326,6 +332,9 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     {!! Form::label('opis', 'Opis oglasa:', ['class' => 'mb-2']) !!}
+                    @error('opis')
+                    <span style="color: red">*required</span>
+                    @enderror
                     {!! Form::textarea('opis', null, ['class' => 'form-control', 'rows' => 3]) !!}
                 </div>
             </div>

@@ -5,10 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
 class Car extends Model
 {
 
     use HasFactory;
+    
+    use Sluggable;
+    use SluggableScopeHelpers;  
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => ['proizvodjac', 'model'],
+                'onUpdate' => true,
+            ]
+        ];
+    }
 
     protected $guarded = [];
 

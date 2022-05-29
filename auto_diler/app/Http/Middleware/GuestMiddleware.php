@@ -19,15 +19,14 @@ class GuestMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-    //     if (Auth::check()) {
-            
-    //         if (Auth::user()->isGuest()) {
-    //             return $next($request);
-    //         }
+        
+        if (!Auth::check() || Auth::user()->roles->name == 'Administrator') {
+            return $next($request);
+        }
+        
+        return response()->view('includes.error_404');
 
-    //     }
+        // return redirect('errors.404');
 
-    //     return redirect('errors.404');
-
-    // }
+    }
 }

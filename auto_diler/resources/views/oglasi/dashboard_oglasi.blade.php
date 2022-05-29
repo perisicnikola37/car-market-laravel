@@ -50,7 +50,7 @@
             @else
 
 
-            <a class="button2 button-hover parallelogram" href="{{route('profile.index')}}">
+            <a class="button2 button-hover parallelogram" href="{{route('profil.index')}}">
                 <span class="skew-fix">
                     <i class="fas fa-user"></i>
                     Profil</span>
@@ -59,7 +59,7 @@
             <a class="button2 button-hover parallelogram" href="{{route('logout')}}">
                 <span class="skew-fix">
                     <i class="fas fa-sign-out-alt"></i>
-                    Izloguj se</span>
+                    Odjavi se</span>
             </a>
 
             @endif
@@ -89,7 +89,7 @@
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Servisi i usluge</span></a></li>
             <li onclick="clickMe()" class="parallelogram"><a href="#"><span class="skew-fix">Registracija vozila</span></a></li>
             <li onclick="clickMe()" class="parallelogram bg-success-custom"><a href="#"><span class="skew-fix">Popust Kartica</span></a></li>
-            <li class="parallelogram bg-danger-custom"><a href="{{route('admin.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
+            <li class="parallelogram bg-danger-custom"><a href="{{route('dodaj-oglas.index')}}"><span class="skew-fix">Dodaj oglas</span></a></li>
         </ul>
     </div>
     
@@ -118,7 +118,7 @@
 
         <div id="post-box">
 
-            <a href="{{route('car.show', $car->id)}}">
+            <a href="{{route('slug', $car->slug)}}">
             <img
             class="img-fluid"
             src="{{$car->photo ? $car->photo->file : "Missing"}}" 
@@ -126,7 +126,7 @@
             title="Slika automobila">
             </a>
             <div class="post-info">
-            <p><a href="{{route('car.show', $car->id)}}">{{$car->proizvodjac}} - {{$car->model}}</a></p> 
+            <p><a href="{{route('slug', $car->slug)}}">{{$car->proizvodjac}} - {{$car->model}}</a></p> 
             <p>Kilometraža: <span>{{$car->kilometraza}}km</span></p>
             <p>Godište: <span>{{$car->godiste}}</span></p>
             <p>Gorivo: <span>{{$car->gorivo->name}}</span></p>
@@ -199,13 +199,6 @@
   
 
 
-    <!-- Footer -->
-        
-    <div class="container">
-        <footer>
-            <p>Auto Diler <span style="color: #0073ff">|</span>created by <span><a href="https://github.com/dzonidevv" target="_blank">Dzoni</a></span></p>
-        </footer>
-    </div>
     
     </div>
     

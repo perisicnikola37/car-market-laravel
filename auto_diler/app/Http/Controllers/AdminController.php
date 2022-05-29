@@ -19,6 +19,10 @@ use App\Models\Gorivo;
 use App\Models\Pogon;
 use App\Models\Photo;
 
+//! Ovo je vazno za Laravel Helpers
+use Illuminate\Support\Str;
+//!
+
 
 class AdminController extends Controller
 {
@@ -147,4 +151,8 @@ class AdminController extends Controller
         return redirect('/esf');
 
     }
+
+
+   
+
 }

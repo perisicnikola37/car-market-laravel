@@ -5,33 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 //!
-use App\Http\Requests\ObjaviOglasRequest;
-
-//!
-use Illuminate\Support\Facades\Auth;
-
-//!
 use App\Models\User;
-use App\Models\Role;
-use App\Models\Car;
-use App\Models\Stanje;
 
-//! Ovo je vazno za Laravel Helpers
-use Illuminate\Support\Str;
-use Symfony\Component\HttpKernel\Event\ViewEvent;
-
-//!
-
-
-class DashboardController extends Controller
+class KorisniciDashboardController extends Controller
 {
-
-
-    public function redirect() {
-        return redirect('/naslovna');
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -40,11 +17,10 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $cars = Car::paginate(8);
+        $users = User::all();
 
-
-        return view('oglasi.dashboard_oglasi', compact(
-            'cars',
+        return view('dashboard.korisnici.svi_korisnici', compact(
+            'users',
         ));
 
     }
@@ -76,22 +52,11 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
-
-    //     $car = Car::findOrFail($id);
-
-    //     return view('oglasi.pogledaj_oglas', compact('car'));
-
-    // }
-
-    public function show($slug) {
-       
-        $car = Car::findBySlug($slug);
-
-        return view('oglasi.pogledaj_oglas', compact('car'));
-
+    public function show($id)
+    {
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -123,6 +88,14 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        session()->flash('user-deleted', 'Uspješno ste izbrisali korisnika!');
+
+        return back();
+
     }
 }

@@ -19,11 +19,11 @@
 
     <!-- Website Title -->
 
-    <title>Dashboard | AutoDiler - Auto oglasi, prodaja djelova, auto placevi, auto saloni Crna Gora</title>
+    @yield('title')
 
     <!-- Website Avatar -->
 
-    <link rel="icon" href="img/optimized images/logo_min.png">
+    <link rel="icon" href="/img/optimized images/logo_min.png">
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
@@ -36,7 +36,14 @@
   
 </head>
 
+
+
+
+
 <body id="admin-page">
+
+
+    
 
 <div id="wrapper">
 
@@ -44,37 +51,18 @@
     @include('layouts.includes.admin_nav') 
 
 
-
-
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="{{route('profile.index')}}"><i class="fa fa-dashboard fa-fw"></i> Profil</a>
+                    <a href="{{route('profil.index')}}"><i class="fa fa-dashboard fa-fw"></i> Profil</a>
                 </li>
-
-
-
-
-              
-                 
-
                     </ul>
-                    <!-- /.nav-second-level -->
                 </li>
-
-
-
-
             </ul>
-
         </div>
-
     </div>
-
 </div>
-
-
 
 
 
@@ -84,13 +72,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"></h1>
+                @yield('analitika-tekst')
 
-                @yield('content')
+                <div style="margin-top: 20px">
+                    @yield('content')
+                </div>
                 
 <br><br>
+
 @yield('scripts')
 
+@yield('error')
 
             </div>
 
@@ -101,7 +93,7 @@
     <!-- /.container-fluid -->
     
 </div>
-<img src="img/optimized images/logo_min.png" height="100">
+
 <!-- /#page-wrapper -->
 
 
@@ -109,19 +101,22 @@
 
 <!-- jQuery -->
 
-{{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
+
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/libs.js')}}"></script>
 
 {{-- Moj custom Font Awesome kit --}}
 <script src="https://kit.fontawesome.com/2824446f9a.js" crossorigin="anonymous"></script>
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script> --}}
 
 
 
 
+<!-- Custom Scripts -->
 
+<script src="{{url('/scripts/scroll_to_top.js')}}"></script>
+<script src="{{url('/scripts/scroll_indicator.js')}}"></script>
+<script src="{{url('/scripts/sweet_alert.js')}}"></script>
 
 
 

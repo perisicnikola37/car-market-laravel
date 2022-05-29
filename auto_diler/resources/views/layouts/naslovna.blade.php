@@ -22,6 +22,9 @@
 
     <title>Naslovna | AutoDiler - Auto oglasi, prodaja djelova, auto placevi, auto saloni Crna Gora</title>
 
+
+    {{-- @yield('title') --}}
+
     <!-- Website Avatar -->
 
     <link rel="icon" href="img/optimized images/logo_min.png">

@@ -1,20 +1,34 @@
 @extends('layouts.admin')
 
+@section('title')
+
+<title>AutoDiler | Dashboard</title>
+    
+@endsection
+
 @section('content')
 
-{{-- @if(auth()->user()->findRoleDashboard())  --}}
+@if(auth()->user()->roles->name == "Administrator")
 
-<h1 class="mb-4 fw-normal">Admin Dashboard</h1>
+<div  style="padding: 20px">
+
+<h4 class="mb-4 fw-normal">Admin Dashboard</h4>
     
-<img src="https://positive.rs/wp-content/uploads//2020/08/5WysSystemAdmin-Featured.png">
+<img height="200" src="https://positive.rs/wp-content/uploads//2020/08/5WysSystemAdmin-Featured.png">
 
-{{-- @else  --}}
+</div>
 
-{{-- <h1 class="mb-4 fw-normal">Subscriber Dashboard</h1>
+@else
 
-<img height="300" src="https://miro.medium.com/max/1252/0*Zw1ZfCk0svcXVQXg.jpg"> --}}
+<div  style="padding: 20px">
 
-{{-- @endif --}}
+<h4 class="mb-4 fw-normal">Subscriber Dashboard</h4>
+
+<img height="200" src="https://miro.medium.com/max/1252/0*Zw1ZfCk0svcXVQXg.jpg"> 
+
+</div>
+
+@endif
 
 
 
