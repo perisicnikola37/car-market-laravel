@@ -20,7 +20,7 @@ class GuestMiddleware
     public function handle(Request $request, Closure $next)
     {
         
-        if (!Auth::check() || Auth::user()->roles->name == 'Administrator') {
+        if (Auth::check() && Auth::user()->roles->name == 'Administrator') {
             return $next($request);
         }
         

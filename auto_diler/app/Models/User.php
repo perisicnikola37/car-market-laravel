@@ -35,38 +35,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Car', 'user_id');
     }
 
+    public function photo() {
+        return $this->morphMany('App\Models\Photo', 'imageable');
+    }
 
-//    public function isGuest() {
-
-//     // Zašto baš '$this->role'
-//     // Jer imam role() relationship
-
-//     if ($this->roles->name == "Administrator") {
-//         return true;
-//     } else {
-//         return false;
-//     }
-
-//     }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public function latest_photo()
+    {
+        return $this->morphOne('App\Models\Photo', 'imageable')->latest('id');
+    }
 
 
     /**

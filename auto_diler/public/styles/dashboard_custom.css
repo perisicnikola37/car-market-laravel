@@ -316,7 +316,7 @@ footer span a:hover {
 }
 
 .align-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .align-right {
@@ -398,4 +398,143 @@ footer span a:hover {
   font-size: 13px;
   font-weight: 600;
 }
+
+#box-izmijeni-profil {
+  padding: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+/* Card W3Schools code */
+
+
+.cardw3 {
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cardw3 p {
+  margin-bottom: 15px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.buttonw3 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.buttonw3:hover {
+  background-color: #0f97ff;
+  transition: 0.25s ease-out;
+}
+
+
+/* End of W3 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */

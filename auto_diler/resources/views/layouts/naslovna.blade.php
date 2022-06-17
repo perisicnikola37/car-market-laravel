@@ -41,7 +41,18 @@
 
 <body>
 
+    
+    
 @yield('content')
+
+@yield('error')
+
+
+
+
+
+
+
 
 
     <!-- Font Awesome -->

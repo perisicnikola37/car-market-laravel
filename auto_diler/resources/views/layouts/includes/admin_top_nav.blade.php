@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
     </button>
     
-    <a style="margin-left: 5px;" class="navbar-brand" href="/"><img height="30" src="img/optimized images/banner_min.png" alt=""></a>
+    <a style="margin-left: 5px;" class="navbar-brand" href="/"><img height="30" src="/img/optimized images/banner_min.png" alt=""></a>
     
 </div>
 <!-- /.navbar-header -->
@@ -32,7 +32,7 @@
         <ul class="dropdown-menu dropdown-user">
             <li><a href="{{route('profil.index')}}"><i class="fa fa-user fa-fw"></i> Profil</a>
             </li>
-            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Podešavanja</a>
+            <li><a href="{{route('profil-podesavanja')}}"><i class="fa fa-gear fa-fw"></i> Podešavanja</a>
             </li>
             <li class="divider"></li>
             <li><a href="{{url('/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Odjavi se</a>

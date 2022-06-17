@@ -209,7 +209,7 @@
                     @error('cijena')
                     <span style="color: red">*required</span>
                     @enderror
-                    {!! Form::text('cijena', null, ['class' => 'form-control']) !!}
+                    {!! Form::number('cijena', null, ['class' => 'form-control', 'placeholder' => '0']) !!}
                 </div>
             </div>
 

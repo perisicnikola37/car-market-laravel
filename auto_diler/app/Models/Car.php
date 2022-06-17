@@ -41,8 +41,14 @@ class Car extends Model
     }
 
     public function photo() {
-        return $this->belongsTo('App\Models\Photo');
+        return $this->morphMany('App\Models\Photo', 'imageable');
     }
+
+    public function latest_photo()
+    {
+        return $this->morphOne('App\Models\Photo', 'imageable')->latest('id');
+    }
+
 
     public function user() {
         return $this->belongsTo('App\Models\User');

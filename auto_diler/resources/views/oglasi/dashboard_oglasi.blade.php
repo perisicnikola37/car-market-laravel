@@ -113,17 +113,36 @@
         
     @foreach($cars as $car)
 
+ 
     <div class="col-sm-3">
 
 
         <div id="post-box">
 
             <a href="{{route('slug', $car->slug)}}">
+
+
+            @if (Auth::check())
+
+            @if (auth()->user()->id == $car->user_id)
+            <i 
+            class="far fa-circle" 
+            style="color: red;margin-bottom: 20px"> 
+            vaš oglas
+            </i>
+            @endif
+
+
+
+
+            @endif
+
             <img
             class="img-fluid"
-            src="{{$car->photo ? $car->photo->file : "Missing"}}" 
+            src="{{$car->latest_photo ? $car->latest_photo->file : "Missing"}}" 
             alt="Missing picture"
             title="Slika automobila">
+
             </a>
             <div class="post-info">
             <p><a href="{{route('slug', $car->slug)}}">{{$car->proizvodjac}} - {{$car->model}}</a></p> 

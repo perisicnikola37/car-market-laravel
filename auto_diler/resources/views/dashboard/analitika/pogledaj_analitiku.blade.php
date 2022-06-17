@@ -3,7 +3,7 @@
 
 @section('title')
 
-<title>AutoDiler | Analitika</title><title>AutoDiler | Statistika</title>
+<title>AutoDiler | Analitika</title>
 	
 @endsection
 
@@ -53,6 +53,7 @@
 			}
 		}
 	});
+
 </script>
 
 @section('analitika-tekst')

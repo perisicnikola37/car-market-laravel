@@ -17,7 +17,7 @@ class KorisniciDashboardController extends Controller
     public function index()
     {
 
-        $users = User::all();
+        $users = User::paginate(6);
 
         return view('dashboard.korisnici.svi_korisnici', compact(
             'users',
@@ -54,7 +54,13 @@ class KorisniciDashboardController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $user = User::findOrFail($id);
+
+        return view('dashboard.korisnici.prikazi_korisnika', compact(
+            'user',
+        ));
+
     }
 
     /**

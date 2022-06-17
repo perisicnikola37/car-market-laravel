@@ -72,17 +72,20 @@ class AdminController extends Controller
 
         $input = $request->all();
 
-        $user = Auth::user();
-
+        $user = Auth::user();   
+        
         if ($file = $request->file('photo_id')) {
 
             $name = time() . $file->getClientOriginalName();
 
             $file->move('storage/images', $name);
 
-            $photo = Photo::create(['file' => $name]);
+            // $photo = Photo::create(['file' => $name]);
 
-            $input['photo_id'] = $photo->id;
+            $photo = Photo::create(['file' => $name, 'imageable_type' => 'App\Models\Car', 'imageable_id' => $user->id]);
+
+            $input['photo_id'] = $photo->id; 
+
         }
 
         if(isset($user)) {
@@ -91,8 +94,6 @@ class AdminController extends Controller
         } else {
         session()->flash('nije-objavljen-oglas', 'Morate biti prijavljeni kako biste izbacili oglas!');
         }
-
-     
 
         return back();
         

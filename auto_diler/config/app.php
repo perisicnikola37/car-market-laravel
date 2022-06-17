@@ -184,6 +184,7 @@ return [
         Illuminate\Auth\AuthServiceProvider::class,
         // Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        
 
         /*
          * Package Service Providers...

@@ -46,7 +46,7 @@
         <img 
         height="200"
         style="border-radius: 20px"
-        src="{{$car->photo->file}}" 
+        src="{{$car->latest_photo ? $car->latest_photo->file : "https://thumbs.dreamstime.com/b/    no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"}}" 
         alt="">
 
        </div>

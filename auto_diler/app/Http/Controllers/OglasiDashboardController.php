@@ -121,6 +121,8 @@ class OglasiDashboardController extends Controller
         
         $input = $request->all();
 
+        $user = auth()->user();
+        
         // Zašto baš "photo_id"?
         // Zato jer je tako u form-i
         if ($file = $request->file('photo_id')) {
@@ -131,7 +133,7 @@ class OglasiDashboardController extends Controller
 
             // Zašto baš 'file'?
             // Jer se u tabeli "photos" nalazi kolona "file" gdje ja storam ime fajla
-            $photo = Photo::create(['file' => $name]);
+            $photo = Photo::create(['file' => $name, 'imageable_id' => $user->id, 'imageable_type' => 'App\Models\Car']);
 
             $input['photo_id'] = $photo->id;
 
@@ -155,11 +157,11 @@ class OglasiDashboardController extends Controller
         
         $car->delete();
 
-        unlink(public_path() . $car->photo->file);
+        // unlink(public_path() . $car->photo->file);
         
         session()->flash('ad-deleted', 'Uspješno ste izbrisali oglas!');
 
-        return back();
+        return redirect('/svi-oglasi');
 
 
     }

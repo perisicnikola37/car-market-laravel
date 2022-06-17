@@ -26,28 +26,39 @@
    
    </div>
 
-<div style="padding: 20px">
+<div class="padding-20">
     
 <table class="table">
     <thead>
         <tr class="text-primary">
-            <th>Ime</th>
-            <th>Korisničko ime</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>Izbriši</th>
+            <th class="align-center">Ime</th>
+            <th class="align-center">Korisničko ime</th>
+            <th class="align-center">Avatar</th>
+            <th class="align-center">Email</th>
+            <th class="align-center">Status</th>
+            <th class="align-center">Created</th>
+            <th class="align-center">Updated</th>
+            <th class="align-center">Izbriši</th>
         </tr>
     </thead>
-    <tbody>
+    
+    <tbody class="align-center">
 
         @foreach ($users as $user)
 
         <tr>
  
-            <td>{{$user->name}}</td>
+            <td><a style="color: #E30707" href="{{route('prikaži-korisnika', $user->id)}}">{{$user->name}}</a></td>
+            
             <td>{{$user->username ? $user->username : "Missing"}}</td>
+
+            <td>
+                <img 
+                height="70"
+                src="{{$user->latest_photo ? $user->latest_photo->file : "https://thumbs.dreamstime.com/b/    no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"}}" 
+                alt="">
+            </td>
+
             <td>{{$user->email}}</td>
             <td>{{$user->roles->name ? $user->roles->name : "Missing"}}</td>
             <td>{{$user->created_at->diffForHumans()}}</td>
@@ -76,7 +87,16 @@
 </table>
 </div>
 
-    
+
+<div class="row">
+
+    <div class="col-sm-6 col-sm-offset-4">
+ 
+        {{$users->links('pagination::bootstrap-4')}}
+
+    </div>
+
+</div>
 
 
     

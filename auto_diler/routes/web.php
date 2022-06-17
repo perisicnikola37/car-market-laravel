@@ -23,10 +23,12 @@ Route::auth();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/dodaj-oglas', App\Http\Controllers\AdminController::class);
+Route::resource('/dodaj-oglas', App\Http\Controllers\AdminController::class)->middleware('limit');
+
 Route::resource('/car', App\Http\Controllers\DashboardController::class);
 Route::resource('/profil', App\Http\Controllers\ProfileController::class);
 
+Route::get('/profil-podesavanja', [App\Http\Controllers\ProfileController::class, 'index2'])->name('profil-podesavanja');
 
 
 // Oglasi Dashboard
@@ -36,6 +38,9 @@ Route::get('/svi-oglasi', [App\Http\Controllers\OglasiDashboardController::class
 
 // Za brisanje korisnika
 Route::delete('/izbriši-korisnika/{id}', [App\Http\Controllers\KorisniciDashboardController::class, 'destroy'])->name('izbriši-korisnika');
+
+// Za prikazivanje korisnika
+Route::get('/prikaži-korisnika/{id}', [App\Http\Controllers\KorisniciDashboardController::class, 'show'])->name('prikaži-korisnika');
 
 
 Route::get('/izmijeni-oglas/{slug}', [App\Http\Controllers\OglasiDashboardController::class, 'edit'])->name('izmijeni-oglas');

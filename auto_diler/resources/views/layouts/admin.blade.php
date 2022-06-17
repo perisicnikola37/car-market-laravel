@@ -82,7 +82,7 @@
 
 @yield('scripts')
 
-@yield('error')
+
 
             </div>
 
@@ -91,7 +91,7 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
-    
+    @yield('error')
 </div>
 
 <!-- /#page-wrapper -->
