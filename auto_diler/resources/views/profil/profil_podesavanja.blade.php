@@ -6,40 +6,7 @@
     
 @endsection
 
-@section('content')<ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-       <a class="nav-link" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-       <a class="nav-link" href="{{route('about')}}">About</a>
-    </li>
-    <li class="nav-item">
-       <a class="nav-link" href="{{route('computer')}}">Computer</a>
-    </li>
-    <li class="nav-item">
-       <a class="nav-link" href="{{route('laptop')}}">Laptop</a>
-    </li>
-    <li class="nav-item">
-       <a class="nav-link" href="{{route('products')}}">Products</a>
-    </li>
-    <li class="nav-item">
-       <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
-    </li>
-    
-    @if (Auth::user())
-    <li class="nav-item d_none">
-       <a class="nav-link" href="/logout">Logout</a>
-    </li> 
-
-    @else
-    <li class="nav-item d_none">
-       <a class="nav-link" href="/login">Login</a>
-    </li>
-    <li class="nav-item d_none">
-       <a class="nav-link" href="/register">Register</a>
-    </li> 
-
-    @endif
+@section('content')
     
  </ul>
 
