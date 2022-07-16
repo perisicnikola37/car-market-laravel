@@ -70,26 +70,18 @@ class AdminController extends Controller
      */
     public function store(ObjaviOglasRequest $request)
     {
-
         $input = $request->all();
-
         $user = Auth::user();   
         
-        if ($file = $request->file('photo_id')) {
+        if ($file = $request->file('file') and Auth::check()) {
 
             $name = time() . $file->getClientOriginalName();
 
             $file->move('storage/images', $name);
-
             // $photo = Photo::create(['file' => $name]);
-
-            if (Auth::check()) {
-                $photo = Photo::create(['file' => $name, 'imageable_type' => 'App\Models\Car', 'imageable_id' => $user->id]);
-                $input['photo_id'] = $photo->id; 
-            }
-
+            // $photo = Photo::create(['file' => $name, 'imageable_type' => 'App\Models\Car', 'imageable_id' => $user->id]);
+            $input['file'] = $name; 
         }
-
         if(isset($user)) {
         $user->cars()->create($input);
         session()->flash('objavljen-oglas', 'Vaš oglas će uskoro biti objavljen!');
@@ -98,8 +90,6 @@ class AdminController extends Controller
         }
 
         return back();
-        
-        
     }
 
     /**

@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('gorivo_id')->index()->nullable();
             $table->string('pogon_id')->index()->nullable();
             $table->string('stanje_id')->index()->nullable();
-            $table->string('photo_id')->index()->nullable();
-            $table->string('placeholder_id')->index()->nullable();
+            $table->string('file');
             $table->string('slug')->index()->nullable();
             $table->string('proizvodjac')->nullable();
             $table->string('model')->nullable();

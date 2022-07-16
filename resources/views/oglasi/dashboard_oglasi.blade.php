@@ -132,14 +132,11 @@
             </i>
             @endif
 
-
-
-
             @endif
 
             <img
             class="img-fluid"
-            src="{{$car->latest_photo ? $car->latest_photo->file : "Missing"}}" 
+            src="storage/images/{{$car->file}}" 
             alt="Missing picture"
             title="Slika automobila">
 

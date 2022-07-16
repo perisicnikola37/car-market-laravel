@@ -39,7 +39,7 @@ class ObjaviOglasRequest extends FormRequest
             'mijenjac' => 'required',
             'opis' => 'required',
             'cijena' => 'required',
-            'photo_id' => 'required',
+            'file' => 'required',
         ];
     }
 }

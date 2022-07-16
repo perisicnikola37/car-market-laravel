@@ -18,7 +18,7 @@ class LimitUserCarsNumber
     {
 
        if (Auth::check()) {
-        if (Auth::user()->cars->count() > 1) {
+        if (Auth::user()->cars->count() > 2) {
             return response()->view('includes.error_limit');
         }
        } 

@@ -187,11 +187,11 @@
     </div>
 
     <div class="col-sm-8 align-right">
-        
+
     <img 
     style="margin-left: 12px;margin-top: 5px;"
     class="w-50"
-    src = "{{$car->latest_photo ? $car->latest_photo->file : "https://thumbs.dreamstime.com/b/    no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"}}"
+    src="/storage/images/{{$car->file}}"
     alt="Missing picture"
     title="Slika automobila">
         

@@ -140,7 +140,7 @@
 
             <div class="col-sm-3">
                 
-                {!! Form::open(['method' => 'POST', 'action' => 'App\Http\Controllers\AdminController@store', 'files' => true]    ) !!} 
+                {!! Form::open(['method' => 'POST', 'action' => 'App\Http\Controllers\AdminController@store', 'files' => true]) !!} 
                 <div class="form-group">
                     {!! Form::label('proizvodjac', 'Proizvođač:', ['class' => 'mb-2']) !!}
                     @error('proizvodjac')
@@ -166,11 +166,11 @@
             <div class="col-sm-3">
 
                 <div class="form-group" style="border: 1px solid #cccccc;padding: 5px;">
-                    {!! Form::label('photo_id', 'Fotografija:', ['class' => 'mb-1']) !!}
-                    @error('photo_id')
+                    {!! Form::label('file', 'Fotografija:', ['class' => 'mb-1']) !!}
+                    @error('file')
                     <span style="color: red">*required</span>
                     @enderror
-                    {!! Form::file('photo_id', null, ['form-control']) !!}
+                    {!! Form::file('file', null, ['form-control']) !!}
                 </div>
 
             </div>

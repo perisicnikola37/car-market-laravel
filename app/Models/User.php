@@ -26,8 +26,7 @@ class User extends Authenticatable
     // }
 
    
-    public function roles()
-    {
+    public function roles() {
         return $this->belongsTo('App\Models\Role', 'role_id');
     }
 
@@ -39,11 +38,10 @@ class User extends Authenticatable
         return $this->morphMany('App\Models\Photo', 'imageable');
     }
 
-    public function latest_photo()
-    {
-        return $this->morphOne('App\Models\Photo', 'imageable')->latest('id');
-    }
-
+    // public function latest_photo()
+    // {
+    //     return $this->morphOne('App\Models\Photo', 'imageable')->latest('id');
+    // }
 
     /**
      * The attributes that are mass assignable.
