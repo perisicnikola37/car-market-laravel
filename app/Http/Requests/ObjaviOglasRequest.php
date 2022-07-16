@@ -34,7 +34,7 @@ class ObjaviOglasRequest extends FormRequest
             'lokacija' => 'required',
             'gorivo_id' => 'required',
             'snaga' => 'required',
-            'boja' => 'required',
+            'boja' => 'required|min:2',
             'pogon_id' => 'required',
             'mijenjac' => 'required',
             'opis' => 'required',

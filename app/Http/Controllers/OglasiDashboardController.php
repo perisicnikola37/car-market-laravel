@@ -138,7 +138,12 @@ class OglasiDashboardController extends Controller
             $input['photo_id'] = $photo->id;
 
         }
-        Auth::user()->cars()->whereId($id)->first()->update($input);
+
+        if (auth()->user()->roles->name == 'admin' || auth()->user()->roles->name == 'Administrator') {
+            $car = Car::findOrFail($id)->whereId($id)->first()->update($input);
+        } else {
+            Auth::user()->cars()->whereId($id)->first()->update($input);
+        }
 
         return redirect('/svi-oglasi');
 
