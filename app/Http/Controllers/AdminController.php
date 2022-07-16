@@ -26,6 +26,7 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -82,9 +83,10 @@ class AdminController extends Controller
 
             // $photo = Photo::create(['file' => $name]);
 
-            $photo = Photo::create(['file' => $name, 'imageable_type' => 'App\Models\Car', 'imageable_id' => $user->id]);
-
-            $input['photo_id'] = $photo->id; 
+            if (Auth::check()) {
+                $photo = Photo::create(['file' => $name, 'imageable_type' => 'App\Models\Car', 'imageable_id' => $user->id]);
+                $input['photo_id'] = $photo->id; 
+            }
 
         }
 

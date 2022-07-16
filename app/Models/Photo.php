@@ -15,9 +15,7 @@ class Photo extends Model
     protected $path = '/storage/images/';
 
     public function getFileAttribute($file) {
-
         return $this->path . $file;
-
     }
 
     public function imageable() {

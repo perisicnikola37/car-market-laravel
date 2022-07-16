@@ -35,7 +35,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 
-
 </head>
 
 <body class="bg-gradient-dark-login">
@@ -64,11 +63,6 @@
 
                   @csrf
 
-                  
-
-                
-           
-
                     <div class="form-group">
       <input id="exampleInputEmail" type="email" class="form-control form-control-user
       @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Ukucajte Vašu email adresu...">
@@ -80,11 +74,6 @@
                         @enderror
 
                     </div>
-                    
-
-
-
-
 
                       <div class="form-group">
 
@@ -110,25 +99,17 @@
                             </div>
                
                       </div>
-
-
-            
      
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 {{ __('Prijavi se') }}
                             </button>
 
-                 
-            
-         
-
-                  
                     <hr>
                     <a href="#" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
+                      <i class="fab fa-google fa-fw"></i> Uloguj se pomoću Google-a
                     </a>
                     <a href="#" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                      <i class="fab fa-facebook-f fa-fw"></i> Uloguj se pomoću Facebook-a
                     </a>
                   </form>
                   <hr>

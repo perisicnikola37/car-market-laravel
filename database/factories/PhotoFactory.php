@@ -20,7 +20,7 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            'file' =>  $this->faker->image('public/storage/images',640,480, null, false),
+            'file' => 'https://www.b92.net/news/pics/2021/01/27/36159110760112972d8760366853581_orig.jpg',
         ];
     }
 }
