@@ -1,6 +1,7 @@
 # AutoDiler - Online Car Market Project | Laravel 9  <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
 >This project was an exercise modeled on the largest Montenegrin car market: 
  [AutoDiler](https://www.autodiler.me/) <img height="15" src="https://i.ibb.co/1dCvrW2/logo-min.png" />
+ - I did both: frontend and backend
 
 
 ![schooldash-dahboard-page](https://i.postimg.cc/Y96bJHfM/naslovna.png)
@@ -39,15 +40,7 @@ php artisan key:generate
 * Migrate the database
 ```shell
 php artisan migrate 
-```
-* Seed database 
-
-    - Use the following command
-    
-        ```shell
-        php artisan db:seed
-        ```
-        
+```     
 * For development or testing purposes, you can use the Laravel built-in server by running 
 ```shell
 php artisan serve
