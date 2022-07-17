@@ -63,6 +63,7 @@ After running the above commands, you should be able to access the application a
 * Used Chart.js
 * Added pagination on homepage
 * Administrator has CMS ( Management System ) with the ability to view, edit and delete everyone's advertisement
+* Forms Validation
 
 ## 🚀 Tech used
 
