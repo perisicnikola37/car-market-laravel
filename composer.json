@@ -10,7 +10,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
         "laravel/helpers": "^1.5",
-        "laravel/sanctum": "^2.14.1",
+        "laravel/sanctum": "^3.0.1",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
         "laravelcollective/html": "^6.3",
