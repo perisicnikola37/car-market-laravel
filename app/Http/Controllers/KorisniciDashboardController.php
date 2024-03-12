@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-//!
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class KorisniciDashboardController extends Controller
 {
@@ -19,9 +17,7 @@ class KorisniciDashboardController extends Controller
 
         $users = User::paginate(6);
 
-        return view('dashboard.korisnici.svi_korisnici', compact(
-            'users',
-        ));
+        return view('dashboard.korisnici.svi_korisnici', compact('users'));
 
     }
 
@@ -54,13 +50,9 @@ class KorisniciDashboardController extends Controller
      */
     public function show($id)
     {
-
         $user = User::findOrFail($id);
 
-        return view('dashboard.korisnici.prikazi_korisnika', compact(
-            'user',
-        ));
-
+        return view('dashboard.korisnici.prikazi_korisnika', compact('user'));
     }
 
     /**
@@ -94,7 +86,6 @@ class KorisniciDashboardController extends Controller
      */
     public function destroy($id)
     {
-        
         $user = User::findOrFail($id);
 
         $user->delete();
@@ -102,6 +93,5 @@ class KorisniciDashboardController extends Controller
         session()->flash('user-deleted', 'Uspješno ste izbrisali korisnika!');
 
         return back();
-
     }
 }

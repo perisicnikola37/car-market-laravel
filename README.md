@@ -3,7 +3,7 @@
  [AutoDiler](https://www.autodiler.me/) <img height="15" src="https://i.ibb.co/1dCvrW2/logo-min.png" />
 
 ![schooldash-dahboard-page](https://i.postimg.cc/Y96bJHfM/naslovna.png)
-![schooldash-dahboard-page](https://i.postimg.cc/xCXj3Mhb/oglas2.png)
+![schooldash-dahboard-page](https://i.postimg.cc/L4jmDcPh/1.png)
 ![schooldash-dahboard-page](https://i.postimg.cc/1zC5FJCQ/limit2.png)
 ![schooldash-dahboard-page](https://i.postimg.cc/brYHW2w9/registracija.png)
 ![schooldash-dahboard-page](https://i.postimg.cc/NGbxTbdJ/logovanje.png)
