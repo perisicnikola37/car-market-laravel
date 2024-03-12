@@ -1,4 +1,4 @@
-# Online Car Market Project | Laravel  <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
+# Online car market project | Laravel  <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
 >This project was an exercise modeled on the largest Montenegrin car market: 
  [AutoDiler](https://www.autodiler.me/) <img height="15" src="https://i.ibb.co/1dCvrW2/logo-min.png" />
 
