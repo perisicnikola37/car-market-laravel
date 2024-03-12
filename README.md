@@ -1,4 +1,4 @@
-# AutoDiler - Online Car Market Project | Laravel  <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
+# Online Car Market Project | Laravel  <img height="25" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" />
 >This project was an exercise modeled on the largest Montenegrin car market: 
  [AutoDiler](https://www.autodiler.me/) <img height="15" src="https://i.ibb.co/1dCvrW2/logo-min.png" />
 
@@ -76,7 +76,7 @@ Empowered administrators with a CMS (Content Management System) enabling them to
 Implemented robust form validation mechanisms to ensure data integrity and user input accuracy.
 
 <div>
-  <div>All rights reserved &copy; <a href="https://github.com/perisicnikola37" style="font-size: 16px;">@perisicnikola37</a></div>
+  <div>&copy; All rights reserved  <a href="https://github.com/perisicnikola37" style="font-size: 16px;">@perisicnikola37</a></div>
 </div>
 
 
