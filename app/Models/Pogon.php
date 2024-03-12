@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pogon extends Model
 {
-    
     use HasFactory;
 
     protected $guarded = [];
-
 }

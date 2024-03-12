@@ -2,12 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-//!
-use App\Models\Car;
-use App\Models\User;
 
 class Role extends Model
 {
@@ -15,14 +12,8 @@ class Role extends Model
 
     protected $guarded = [];
 
-
-    public function users() {
-        return $this->belongsTo('App\Models\User', 'user_id');
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
-
-
-
-
-
-
 }

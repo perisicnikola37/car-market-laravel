@@ -2,46 +2,34 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Car;
+use App\Models\Photo;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-//!
-use App\Models\Car;
-use App\Models\Role;
-use App\Models\Stanje;
-
-
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
     protected $guarded = [];
 
-    // public function cars() {
-    //     return $this->belongsTo('App\Models\Car');
-    // }
-
-   
-    public function roles() {
-        return $this->belongsTo('App\Models\Role', 'role_id');
+    public function roles()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
-    public function cars() {
-        return $this->hasMany('App\Models\Car', 'user_id');
+    public function cars()
+    {
+        return $this->hasMany(Car::class, 'user_id');
     }
 
-    public function photo() {
-        return $this->morphMany('App\Models\Photo', 'imageable');
+    public function photo()
+    {
+        return $this->morphMany(Photo::class, 'imageable');
     }
-
-    // public function latest_photo()
-    // {
-    //     return $this->morphOne('App\Models\Photo', 'imageable')->latest('id');
-    // }
 
     /**
      * The attributes that are mass assignable.
