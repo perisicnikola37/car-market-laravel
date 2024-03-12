@@ -2,35 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-//!
-use App\Http\Requests\ObjaviOglasRequest;
-
-//!
-use Illuminate\Support\Facades\Auth;
-
-//!
-use App\Models\User;
-use App\Models\Role;
 use App\Models\Car;
-use App\Models\Stanje;
-
-//! Ovo je vazno za Laravel Helpers
-use Illuminate\Support\Str;
-use Symfony\Component\HttpKernel\Event\ViewEvent;
-
-//!
-
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
 
-
-    public function redirect() {
+    public function redirect()
+    {
         return redirect('/naslovna');
     }
-
 
     /**
      * Display a listing of the resource.
@@ -42,10 +23,7 @@ class DashboardController extends Controller
 
         $cars = Car::paginate(8);
 
-
-        return view('oglasi.dashboard_oglasi', compact(
-            'cars',
-        ));
+        return view('oglasi.dashboard_oglasi', compact('cars'));
 
     }
 
@@ -76,17 +54,9 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-    // {
+    public function show($slug)
+    {
 
-    //     $car = Car::findOrFail($id);
-
-    //     return view('oglasi.pogledaj_oglas', compact('car'));
-
-    // }
-
-    public function show($slug) {
-       
         $car = Car::findBySlug($slug);
 
         return view('oglasi.pogledaj_oglas', compact('car'));

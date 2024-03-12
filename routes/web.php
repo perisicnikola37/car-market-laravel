@@ -1,51 +1,47 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnalitikaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KorisniciDashboardController;
+use App\Http\Controllers\OglasiDashboardController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::auth();
 
-Route::group(['middleware' => 'isadmin'], function() {
-Route::resource('/analitika', App\Http\Controllers\AnalitikaController::class);
-// Korisnici Dashboard
-Route::get('/svi-korisnici', [App\Http\Controllers\KorisniciDashboardController::class, 'index'])->name('svi-korisnici');
+Route::group(['middleware' => 'isadmin'], function () {
+    Route::resource('/analitika', AnalitikaController::class);
+    Route::get('/svi-korisnici', [KorisniciDashboardController::class, 'index'])->name('svi-korisnici');
 });
 
-Route::controller(DashboardController::class)->group(function() {
-// Redirect na /naslovna
-Route::get('/', [DashboardController::class, 'redirect']);
-Route::get('/naslovna', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/car', App\Http\Controllers\DashboardController::class);
-Route::get('/oglas/{slug}', [App\Http\Controllers\DashboardController::class, 'show'])->name('slug');
+Route::controller(DashboardController::class)->group(function () {
+    Route::get('/', 'redirect');
+    Route::get('/naslovna', 'index')->name('dashboard');
+    Route::resource('/car', DashboardController::class);
+    Route::get('/oglas/{slug}', 'show')->name('slug');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/dodaj-oglas', App\Http\Controllers\AdminController::class)->middleware('limit');
+Route::resource('/dodaj-oglas', AdminController::class)->middleware('limit');
 
-Route::resource('/profil', App\Http\Controllers\ProfileController::class);
+Route::resource('/profil', ProfileController::class);
 
-Route::get('/profil-podesavanja', [App\Http\Controllers\ProfileController::class, 'index2'])->name('profil-podesavanja');
+Route::get('/profil-podesavanja', [ProfileController::class, 'index2'])->name('profil-podesavanja');
 
-Route::controller(KorisniciDashboardController::class)->group(function() {
-// Za brisanje korisnika
-Route::delete('/izbriši-korisnika/{id}', [App\Http\Controllers\KorisniciDashboardController::class, 'destroy'])->name('izbriši-korisnika');
-// Za prikazivanje korisnika
-Route::get('/prikaži-korisnika/{id}', [App\Http\Controllers\KorisniciDashboardController::class, 'show'])->name('prikaži-korisnika');
+Route::controller(KorisniciDashboardController::class)->group(function () {
+    Route::delete('/izbriši-korisnika/{id}', 'destroy')->name('izbriši-korisnika');
+    Route::get('/prikaži-korisnika/{id}', 'show')->name('prikaži-korisnika');
 });
 
-Route::controller(OglasiDashboardController::class)->group(function() {
-// Oglasi Dashboard
-Route::get('/svi-oglasi', [App\Http\Controllers\OglasiDashboardController::class, 'index'])->name('svi-oglasi');
-Route::get('/izmijeni-oglas/{slug}', [App\Http\Controllers\OglasiDashboardController::class, 'edit'])->name('izmijeni-oglas');
-// Prije bez slug-a
-// Route::get('/izmijeni-oglas/{id}', [App\Http\Controllers\OglasiDashboardController::class, 'edit'])->name('izmijeni-oglas');
-Route::patch('/izmijeni-oglas/{id}/update', [App\Http\Controllers\OglasiDashboardController::class, 'update'])->name('izmijeni-oglas-update');
-Route::delete('/izmijeni-oglas/{id}', [App\Http\Controllers\OglasiDashboardController::class, 'destroy'])->name('izmijeni-oglas-destroy');
+Route::controller(OglasiDashboardController::class)->group(function () {
+    Route::get('/svi-oglasi', 'index')->name('svi-oglasi');
+    Route::get('/izmijeni-oglas/{slug}', 'edit')->name('izmijeni-oglas');
+    Route::patch('/izmijeni-oglas/{id}/update', 'update')->name('izmijeni-oglas-update');
+    Route::delete('/izmijeni-oglas/{id}', 'destroy')->name('izmijeni-oglas-destroy');
 });
 
-// Route za logout
 Route::get('/logout', [LoginController::class, 'logout']);
-
-
