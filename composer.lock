@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21a7e606c0459d775008eed696365ba1",
+    "content-hash": "eeddf62b9135dfb755f8eb1ff7f93d71",
     "packages": [
         {
             "name": "brick/math",
@@ -2716,24 +2716,26 @@
         },
         {
             "name": "pelmered/fake-car",
-            "version": "1.7",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pelmered/fake-car.git",
-                "reference": "1fcca25418feefeb0d3d6a2c275f098726cb0301"
+                "reference": "9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/1fcca25418feefeb0d3d6a2c275f098726cb0301",
-                "reference": "1fcca25418feefeb0d3d6a2c275f098726cb0301",
+                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3",
+                "reference": "9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3",
                 "shasum": ""
             },
             "require": {
                 "fakerphp/faker": "^1.10",
-                "php": "^7.3||^8.0||^8.1"
+                "php": "^8.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5"
+                "brianium/paratest": "^7.1",
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^10.1"
             },
             "type": "library",
             "autoload": {
@@ -2761,9 +2763,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pelmered/fake-car/issues",
-                "source": "https://github.com/pelmered/fake-car/tree/1.7"
+                "source": "https://github.com/pelmered/fake-car/tree/2.0.1"
             },
-            "time": "2021-10-05T08:52:30+00:00"
+            "time": "2024-02-03T00:33:41+00:00"
         },
         {
             "name": "phpoption/phpoption",
