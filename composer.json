@@ -11,7 +11,7 @@
         "laravel/framework": "^9.11",
         "laravel/helpers": "^1.5",
         "laravel/sanctum": "^3.0.1",
-        "laravel/tinker": "^2.7",
+        "laravel/tinker": "^3.0",
         "laravel/ui": "^4.1",
         "laravelcollective/html": "^6.3",
         "pelmered/fake-car": "^2.0"
